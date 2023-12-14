@@ -17,7 +17,7 @@ use App\Http\Controllers\PedidoController;
 */
 
 Route::get('/', function () {
-    return view('auth.login');
+    return view('welcome');
 });
 
 Route::middleware([
@@ -31,4 +31,5 @@ Route::middleware([
     Route::resource('/usuarios',UserController::class)->names('usuarios');
     Route::resource('/anotes',AnoteController::class)->names('anotes');
     Route::resource('/pedidos',PedidoController::class)->names('pedidos');
+
 });
