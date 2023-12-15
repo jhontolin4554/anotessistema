@@ -13,8 +13,8 @@
           </div>
           <!-- /.card-header -->
 
-          <div class="card-body">
-            <div>
+          <div class="card-body table-responsive p-0">
+
                 <button wire:click="showModal" class="btn btn-primary">CREAR PEDIDO DEL TRABAJADOR</button>
 
                 @if($modalVisible)
@@ -27,11 +27,11 @@
                      VOLVER
                     </p>
                   </a>
-                 </div>
 
 
 
-                 <table id="pedido" class="table table-bordered table-striped">
+
+                 <table id="example1" class="table table-bordered table-striped">
                     <thead>
                     <tr>
                       <th>id </th>
@@ -62,8 +62,15 @@
                           {{$pedido->descrip}}
                       </td>
                       <td>
-                        <button wire:click="edit({{$pedido->id}})" class="btn btn-success">EDITAR ANOTE</button>
-                        <button wire:click="eliminar({{$pedido->id}})" class="btn btn-danger">ELIMINAR ANOTE</button>
+                        <div class="row">
+                            <div class="col-md-6 mb-2">
+                                <button wire:click="edit({{$pedido->id}})" class="btn btn-success btn-block" style="font-size: 16px;">EDITAR ANOTE</button>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <button wire:click="eliminar({{$pedido->id}})" class="btn btn-danger btn-block" style="font-size: 16px;">ELIMINAR ANOTE</button>
+                            </div>
+                        </div>
+
                       </td>
                       </tr>
                   @endforeach

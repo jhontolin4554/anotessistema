@@ -36,7 +36,7 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="{{ route('dashboard') }}" class="brand-link">
-      <img src="{{ asset('storage/caballo.jpg') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="{{ asset('dist/img/caballo.jpg') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">EDINAY</span>
     </a>
 
@@ -46,7 +46,7 @@
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
 
-            <img src="{{ asset(Auth::user()->profile_photo_path) }}" class="img-circle elevation-2" alt="User Image">
+            <img src="{{ asset('dist/img/avatar1.png') }}" class="img-circle elevation-2" alt="User Image">
 
 
         </div>
@@ -76,7 +76,7 @@
               </p>
             </a>
           </li>
-         
+
 
         </ul>
 

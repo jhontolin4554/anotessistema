@@ -28,7 +28,6 @@
               <thead>
               <tr>
                 <th>Nombre </th>
-                <th>Foto</th>
                 <th>Acciones</th>
 
               </tr>
@@ -39,24 +38,23 @@
                 <td>
                     {{$user->name}}
                 </td>
-                <td>
-                    <img src="{{ asset(Auth::user()->profile_photo_path) }}" class="img-circle elevation-2" alt="User Image" style="width: 50px; height: 50px;">
-                </td>
 
                 <td>
-        <button wire:click="edit({{$user->id}})" class="btn btn-success">EDITAR TRABAJADOR</button>
-        <a href="{{ route('anotes.show',$user->id) }}" class="btn btn-primary">
-            <p>
-                VER ANOTE
-               </p>
-        </a>
-        <a href="{{ route('pedidos.show',$user->id) }}" class="btn btn-primary">
-            <p>
-                VER PEDIDO
-               </p>
-        </a>
+                    <div class="row">
+                        <div class="col-md-4 mb-2">
+                            <button wire:click="edit({{$user->id}})" class="btn btn-success btn-block" style="width: 90%; font-size: 16px;">EDITAR TRABAJADOR</button>
+                        </div>
+                        <div class="col-md-4 mb-2">
+                            <a href="{{ route('anotes.show',$user->id) }}" class="btn btn-primary btn-block" style="width: 90%; font-size: 16px;">VER ANOTE</a>
+                        </div>
+                        <div class="col-md-4 mb-2">
+                            <a href="{{ route('pedidos.show',$user->id) }}" class="btn btn-primary btn-block" style="width: 90%; font-size: 16px;">VER PEDIDO</a>
+                        </div>
+                        <div class="col-md-4 mb-2">
+                            <button wire:click="eliminar({{$user->id}})" class="btn btn-danger btn-block" style="width: 90%; font-size: 16px;">ELIMINAR TRABAJADOR</button>
+                        </div>
+                    </div>
 
-        <button wire:click="eliminar({{$user->id}})" class="btn btn-danger">ELIMINAR TRABAJADOR</button>
                 </td>
                 </tr>
             @endforeach
